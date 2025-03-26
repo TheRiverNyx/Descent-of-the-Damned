@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9e6a20a1-f6ba-4dd5-9e26-1ed3b066808f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Scenes/game.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/game.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scenes/player.tscn" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/player.tscn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Global.gd" beforeDir="false" afterPath="$PROJECT_DIR$/Global.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/player.gd" beforeDir="false" afterPath="$PROJECT_DIR$/player.gd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sprites/worldTileset.tres" beforeDir="false" afterPath="$PROJECT_DIR$/../Sprites/worldTileset.tres" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/cinecam.gdextension" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/help/h_blend_data2d.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/help/h_blend_data3d.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/help/h_cam_sequence2d.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/help/h_cam_sequence3d.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/help/h_cam_target2d.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/help/h_cam_target3d.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/help/h_cinecam2d.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/help/h_cinecam3d.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/help/h_virtual_cam2d.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/help/h_virtual_cam3d.gd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/BlendData2D.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/BlendData2D.svg.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/BlendData3D.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/BlendData3D.svg.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/CamSequence2D.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/CamSequence2D.svg.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/CamSequence3D.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/CamSequence3D.svg.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/CamTarget2D.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/CamTarget2D.svg.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/CamTarget3D.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/CamTarget3D.svg.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/CineCam2D.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/CineCam2D.svg.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/CineCam3D.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/CineCam3D.svg.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/VirtualCam2D.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/VirtualCam2D.svg.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/VirtualCam3D.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/icons/VirtualCam3D.svg.import" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/linux32/libcinecam.linux.template_debug.x86_32.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/linux32/libcinecam.linux.template_release.x86_32.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/linux64/libcinecam.linux.template_debug.x86_64.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/linux64/libcinecam.linux.template_release.x86_64.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/win32/~libcinecam.windows.template_debug.x86_64.dll~RF16511f72.TMP" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/win32/~libcinecam.windows.template_debug.x86_64.dll~RF16516eac.TMP" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/win32/~libcinecam.windows.template_debug.x86_64.dll~RF16519ca1.TMP" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/win32/~libcinecam.windows.template_debug.x86_64.dll~RF1651da85.TMP" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../cinecam/win32/~libcinecam.windows.template_debug.x86_64.dll~RF16528694.TMP" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../project.godot" beforeDir="false" afterPath="$PROJECT_DIR$/../../project.godot" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "TheRiverNyx"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Arcane-Asylum-Studios/DescentOfTheDamned.git",
+    "accountId": "714f6751-079c-4aa0-afdb-cdcb2ef154b2"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2jjD2yTtQIApCGHEjENXzRDR7Hc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9e6a20a1-f6ba-4dd5-9e26-1ed3b066808f" name="Changes" comment="" />
+      <created>1721891390335</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721891390335</updated>
+      <workItem from="1721891392913" duration="174000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

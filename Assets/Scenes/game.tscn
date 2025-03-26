@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=4 uid="uid://cgajk7i8x34ee"]
+
+[ext_resource type="TileSet" uid="uid://nx7o57ppk617" path="res://Assets/Sprites/worldTileset.tres" id="1_ku1qg"]
+[ext_resource type="PackedScene" uid="uid://cjsbtj5on7dmk" path="res://Assets/Scenes/player.tscn" id="2_e4k7m"]
+[ext_resource type="PackedScene" uid="uid://dky581u43mw41" path="res://Assets/Scenes/baseEnemy.tscn" id="3_kvxb1"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_nytva"]
+vertices = PackedVector2Array(302, 1, -18, 1, -18, -31, 302, -31)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-18, 1, -18, -31, 302, -31, 302, 1)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_obyaf"]
+vertices = PackedVector2Array(223.281, 1.88281, -2.16406, 1.88281, -2.16406, -28.2344, 223.281, -28.2344)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-2.1678, 1.88214, -2.1678, -28.2321, 223.283, -28.2321, 223.283, 1.88214, 93.7853, 1.88214)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nn73l"]
+size = Vector2(16, 96)
+
+[node name="Game" type="Node2D"]
+
+[node name="mid" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD7/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAD7/wEAAAABAAAAAAD7/wIAAAAAAAEAAAD8/wIAAAAAAAEAAAD9/wIAAAABAAEAAAD+/wIAAAAAAAEAAAD//wIAAAAAAAEAAAAAAAIAAAAAAAEAAAAAAAEAAAAAAAEAAAABAAEAAAABAAAAAAACAAEAAAAAAAEAAAACAAIAAAABAAEAAAABAAIAAAAAAAEAAAD//wEAAAAAAAEAAAD+/wEAAAABAAEAAAD9/wEAAAAAAAEAAAD8/wEAAAAAAAEAAAACAAMAAAAAAAEAAAABAAMAAAAAAAEAAAAAAAMAAAABAAEAAAD//wMAAAAAAAEAAAD+/wMAAAABAAAAAAD9/wMAAAAAAAEAAAD8/wMAAAABAAAAAAD7/wMAAAAAAAEAAAADAAAAAAAJAAEAAAAEAAAAAAAKAAEAAAAFAAAAAAALAAEAAAAGAAAAAAAHAAEAAAAHAAAAAAAHAAEAAAAIAAAAAAAHAAEAAAAJAAAAAAAHAAEAAAAKAAAAAAAHAAEAAAALAAAAAAAHAAEAAAAMAAAAAAAHAAEAAAANAAAAAAAHAAEAAAAOAAAAAAAHAAEAAAADAAMAAAAEAAoAAAAEAAMAAAAEAAoAAAAFAAMAAAAEAAoAAAAFAAIAAAAEAAoAAAAEAAIAAAAEAAoAAAADAAIAAAAEAAoAAAADAAEAAAAEAAkAAAAEAAEAAAAEAAkAAAAFAAEAAAAEAAkAAAAGAAEAAAAGAAEAAAAGAAIAAAAGAAEAAAAGAAMAAAAGAAEAAAAHAAEAAAAGAAEAAAAHAAIAAAAGAAEAAAAHAAMAAAAGAAEAAAAIAAEAAAAGAAEAAAAIAAIAAAAGAAEAAAAIAAMAAAAGAAEAAAAJAAEAAAAGAAEAAAAJAAIAAAAGAAEAAAAJAAMAAAAGAAEAAAAKAAEAAAAGAAEAAAAKAAIAAAAGAAEAAAAKAAMAAAAGAAEAAAALAAEAAAAGAAEAAAALAAIAAAAGAAEAAAALAAMAAAAGAAEAAAAMAAEAAAAGAAEAAAAMAAIAAAAGAAEAAAAMAAMAAAAGAAEAAAANAAEAAAAGAAEAAAANAAIAAAAGAAEAAAANAAMAAAAGAAEAAAAOAAEAAAAGAAEAAAAOAAIAAAAGAAEAAAAOAAMAAAAGAAEAAAABAP//AAABAAMAAAAGAP//AAABAAMAAAD9////AAAAAAUAAAD9//z/AAAAAAQAAAD9//3/AAAAAAQAAAD9//7/AAAAAAQAAAD9//v/AAAAAAMAAAAIAP//AAADAAgAAAAIAP3/AAACAAQAAAALAP//AAADAAgAAAALAP7/AAADAAcAAAALAP3/AAADAAcAAAALAPz/AAACAAgAAAALAPv/AAADAAgAAAALAPn/AAACAAQAAAD+////AAABAAYAAAD8////AAABAAYAAAD7////AAAAAAYAAAACAPz/AAAAAAAAAAABAPz/AAAAAAAAAAAAAPz/AAAAAAAAAAD///z/AAAAAAAAAAD+//z/AAAAAAAAAAAEAPz/AAAAAAAAAAAFAPz/AAAAAAAAAAAGAPz/AAAAAAAAAAAHAPz/AAAAAAAAAAAIAPz/AAAAAAAAAAAJAPz/AAAAAAAAAAAKAPz/AAAAAAAAAAA=")
+tile_set = ExtResource("1_ku1qg")
+
+[node name="Player" parent="." instance=ExtResource("2_e4k7m")]
+z_index = 5
+position = Vector2(-14, -83)
+scale = Vector2(1, 1)
+speed = 200.0
+playerState = 5
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(14, 83)
+zoom = Vector2(2.565, 2.565)
+limit_smoothed = true
+
+[node name="Navigation" type="Node2D" parent="."]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Navigation"]
+position = Vector2(-62, -1)
+navigation_polygon = SubResource("NavigationPolygon_nytva")
+
+[node name="NavigationRegion2D2" type="NavigationRegion2D" parent="Navigation"]
+position = Vector2(-30, -66)
+scale = Vector2(0.922594, 1.06262)
+navigation_polygon = SubResource("NavigationPolygon_obyaf")
+
+[node name="Ladder" type="NavigationLink2D" parent="Navigation" groups=["ladder_link"]]
+navigation_layers = 3
+start_position = Vector2(56, -88)
+end_position = Vector2(56, -8)
+metadata/path_type = "ladder"
+
+[node name="LadderArea" type="Area2D" parent="Navigation/Ladder" groups=["ladder_link"]]
+collision_layer = 8
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Navigation/Ladder/LadderArea"]
+position = Vector2(56, -48)
+shape = SubResource("RectangleShape2D_nn73l")
+
+[node name="SlimeEnemy" parent="." instance=ExtResource("3_kvxb1")]
+position = Vector2(-9, -6)

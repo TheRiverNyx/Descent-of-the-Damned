@@ -1,0 +1,17 @@
+extends Node
+enum DamageType{
+	FIRE,
+	ICE,
+	DARK,
+	POISON,
+	HOLY,
+	LIGHTNING,
+	BLOOD,
+	PSYCHIC,
+	VAMPIRIC,
+	DISEASE,
+	SLASH,
+	PIERCE,
+	BLUNT,
+	CRUSH
+}

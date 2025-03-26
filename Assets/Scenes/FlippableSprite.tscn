@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://r8j6de52mk20"]
+
+[ext_resource type="Script" uid="uid://v3qd3m565q7r" path="res://Assets/Scripts/flippable_sprite.gd" id="1_4wad2"]
+
+[node name="Sprite2D" type="Sprite2D"]
+script = ExtResource("1_4wad2")
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": true,
+"layer_section": false,
+"output_section": false,
+"pending_changes": {
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "SpriteComponent/AnimationPlayer",
+"slice": "",
+"source": ""
+}
+}
