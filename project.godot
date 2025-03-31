@@ -11,16 +11,16 @@ config_version=5
 [application]
 
 config/name="DescentOfTheDamned"
-run/main_scene="res://Assets/Scenes/game.tscn"
+run/main_scene="res://Scenes/main/game.tscn"
 config/use_custom_user_dir=true
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://cw32cw3l4n8ad"
 
 [autoload]
 
-Global="*res://Assets/Scripts/Global.gd"
+Global="*res://autoload/Global.gd"
 ControllerIcons="*res://addons/controller_icons/ControllerIcons.gd"
-DamageTypes="*res://Assets/Scripts/damage_types.gd"
+DamageTypes="*res://Scripts/globals/damage_types.gd"
 
 [dotnet]
 
@@ -33,7 +33,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/controller_icons/plugin.cfg", "res://addons/gaea/plugin.cfg", "res://addons/godot_licensing/plugin.cfg", "res://addons/script-ide/plugin.cfg", "res://addons/tnowe_extra_controls/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/controller_icons/plugin.cfg", "res://addons/gaea/plugin.cfg", "res://addons/godot_licensing/plugin.cfg", "res://addons/licenses/plugin.cfg", "res://addons/script-ide/plugin.cfg", "res://addons/tnowe_extra_controls/plugin.cfg")
 
 [global_group]
 
