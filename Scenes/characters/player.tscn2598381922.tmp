@@ -1,12 +1,22 @@
-[gd_scene load_steps=29 format=3 uid="uid://cjsbtj5on7dmk"]
+[gd_scene load_steps=24 format=3 uid="uid://cjsbtj5on7dmk"]
 
 [ext_resource type="Script" uid="uid://dqybxi6tnbui7" path="res://Scripts/characters/player/player_character.gd" id="1_jp3cw"]
 [ext_resource type="Texture2D" uid="uid://c8jxwma7qx5ce" path="res://Placeholders/brackeys_platformer_assets/sprites/knight.png" id="2_07g0c"]
 [ext_resource type="Script" uid="uid://doctxwbngvigi" path="res://Scripts/characters/Components/hurtbox_component.gd" id="2_lerqx"]
 [ext_resource type="Script" uid="uid://bp16e05ve4uu2" path="res://Scripts/characters/Components/health_component.gd" id="3_lerqx"]
 [ext_resource type="Script" uid="uid://v3qd3m565q7r" path="res://Scripts/globals/flippable_sprite.gd" id="5_ecf78"]
-[ext_resource type="Script" uid="uid://b5afttnlc2f84" path="res://Scenes/characters/flippable_component.gd" id="5_twm3q"]
 [ext_resource type="Script" uid="uid://8tyypbfy61me" path="res://Scripts/characters/Components/hitbox_component.gd" id="7_c3tg1"]
+[ext_resource type="Script" uid="uid://do7nqvvemd714" path="res://Scripts/systems/Finite State Machine/StateMachine.gd" id="8_tf8qx"]
+[ext_resource type="Script" uid="uid://du3jom2xyq1gj" path="res://Scripts/characters/player/states/attacking.gd" id="9_sc2al"]
+[ext_resource type="Script" uid="uid://cspik8cg1a4t5" path="res://Scripts/characters/player/states/idle.gd" id="10_ny3fl"]
+[ext_resource type="Script" uid="uid://crcedc56j3wvk" path="res://Scripts/characters/player/states/running.gd" id="11_5a6aj"]
+[ext_resource type="Script" uid="uid://ddyo223g3o610" path="res://Scripts/characters/player/states/walking.gd" id="12_fq1sf"]
+[ext_resource type="Script" uid="uid://b5ge32er1p3fl" path="res://Scripts/characters/player/states/jumping.gd" id="13_ktxk4"]
+[ext_resource type="Script" uid="uid://b6h3iewpy6lqd" path="res://Scripts/characters/player/states/falling.gd" id="14_rolin"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mhlov"]
+radius = 7.0
+height = 20.0
 
 [sub_resource type="Animation" id="Animation_00plc"]
 length = 0.001
@@ -129,71 +139,33 @@ _data = {
 &"run": SubResource("Animation_dkaap")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0r5da"]
-animation = &"idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_twm3q"]
-animation = &"roll"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fgiwp"]
-animation = &"run"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8liwr"]
-advance_mode = 2
-advance_expression = "current_state==PlayerStates.IDLE"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5cq8p"]
-advance_mode = 2
-advance_expression = "current_state==PlayerStates.RUNNING"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2si0u"]
-advance_mode = 2
-advance_expression = "current_state==PlayerStates.DODGING"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2smwd"]
-advance_mode = 2
-advance_expression = "current_state==PlayerStates.IDLE"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gul8o"]
-advance_mode = 2
-advance_expression = "current_state==PlayerStates.IDLE"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tf8qx"]
-advance_mode = 2
-advance_expression = "current_state==PlayerStates.DODGING"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sc2al"]
-advance_mode = 2
-advance_expression = "current_state==PlayerStates.RUNNING"
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_0r5da"]
-states/Start/position = Vector2(158, 105)
-states/idle/node = SubResource("AnimationNodeAnimation_0r5da")
-states/idle/position = Vector2(321, 100)
-states/roll/node = SubResource("AnimationNodeAnimation_twm3q")
-states/roll/position = Vector2(566, 127)
-states/run/node = SubResource("AnimationNodeAnimation_fgiwp")
-states/run/position = Vector2(474, 35)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_8liwr"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_5cq8p"), "run", "roll", SubResource("AnimationNodeStateMachineTransition_2si0u"), "roll", "idle", SubResource("AnimationNodeStateMachineTransition_2smwd"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_gul8o"), "idle", "roll", SubResource("AnimationNodeStateMachineTransition_tf8qx"), "roll", "run", SubResource("AnimationNodeStateMachineTransition_sc2al")]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h0m84"]
+radius = 5.0
+height = 16.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sq1gg"]
 radius = 4.0
 height = 22.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mhlov"]
-radius = 7.0
-height = 20.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h0m84"]
-radius = 5.0
-height = 16.0
-
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("health", "animation_player") groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("health", "hitbox", "hurtbox", "anim_tree", "sprite") groups=["player"]]
 collision_layer = 2
 collision_mask = 15
 script = ExtResource("1_jp3cw")
 health = NodePath("HealthComponent")
-animation_player = NodePath("SpriteComponent/AnimationPlayer")
+hitbox = NodePath("HitboxComponent")
+hurtbox = NodePath("HurtboxComponenent")
+anim_tree = NodePath("")
+sprite = NodePath("SpriteComponent/Sprite2D")
+
+[node name="HurtboxComponenent" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+monitorable = false
+script = ExtResource("2_lerqx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponenent"]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_mhlov")
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("3_lerqx")
@@ -230,32 +202,44 @@ libraries = {
 &"": SubResource("AnimationLibrary_2xkvl")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="SpriteComponent"]
-root_node = NodePath("../Sprite2D")
-tree_root = SubResource("AnimationNodeStateMachine_0r5da")
-advance_expression_base_node = NodePath("../..")
-anim_player = NodePath("../AnimationPlayer")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_h0m84")
 
-[node name="FlippableComponents" type="Node2D" parent="."]
-script = ExtResource("5_twm3q")
-
-[node name="HitboxComponent" type="Area2D" parent="FlippableComponents"]
+[node name="HitboxComponent" type="Area2D" parent="."]
+position = Vector2(4, 0)
+rotation = 0.327301
+monitoring = false
 script = ExtResource("7_c3tg1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FlippableComponents/HitboxComponent"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 position = Vector2(11, -8)
 rotation = 0.481346
 shape = SubResource("CapsuleShape2D_sq1gg")
 
-[node name="HurtboxComponenent" type="Area2D" parent="FlippableComponents"]
-collision_layer = 0
-collision_mask = 0
-monitorable = false
-script = ExtResource("2_lerqx")
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("8_tf8qx")
+metadata/_custom_type_script = "uid://do7nqvvemd714"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FlippableComponents/HurtboxComponenent"]
-position = Vector2(0, -2)
-shape = SubResource("CapsuleShape2D_mhlov")
+[node name="Attacking" type="Node" parent="StateMachine"]
+script = ExtResource("9_sc2al")
+metadata/_custom_type_script = "uid://k3hdmvm5mutf"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_h0m84")
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("10_ny3fl")
+metadata/_custom_type_script = "uid://k3hdmvm5mutf"
+
+[node name="Running" type="Node" parent="StateMachine"]
+script = ExtResource("11_5a6aj")
+metadata/_custom_type_script = "uid://k3hdmvm5mutf"
+
+[node name="Walking" type="Node" parent="StateMachine"]
+script = ExtResource("12_fq1sf")
+metadata/_custom_type_script = "uid://k3hdmvm5mutf"
+
+[node name="Jumping" type="Node" parent="StateMachine"]
+script = ExtResource("13_ktxk4")
+metadata/_custom_type_script = "uid://k3hdmvm5mutf"
+
+[node name="Falling" type="Node" parent="StateMachine"]
+script = ExtResource("14_rolin")
+metadata/_custom_type_script = "uid://k3hdmvm5mutf"
