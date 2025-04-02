@@ -3,16 +3,16 @@ class_name State extends Node
 signal finished(next_state_path: String, data:Dictionary)
 
 func handle_input(event: InputEvent) -> void:
-	pass
-	
+    pass
+    
 func update(_delta: float) -> void:
-	pass
-	
+    pass
+    
 func physics_update(delta: float) -> void:
-	pass
+    pass
 
 func enter(previous_state_path:String, data:={})->void:
-	pass
-	
+    pass
+    
 func exit() -> void:
-	pass
+    pass
