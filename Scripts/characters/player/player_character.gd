@@ -44,6 +44,7 @@ func _physics_process(delta: float) -> void:
             set_flip_character(false)
         elif direction<0:
             set_flip_character(true)
+
     else:
         velocity.x = move_toward(velocity.x, 0, speed)
     move_and_slide()
