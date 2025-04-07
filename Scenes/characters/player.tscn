@@ -188,12 +188,15 @@ height = 20.0
 radius = 5.0
 height = 16.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("health", "animation_player") groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("health", "hitbox", "hurtbox", "animation_player") groups=["player"]]
 collision_layer = 2
 collision_mask = 15
 script = ExtResource("1_jp3cw")
 health = NodePath("HealthComponent")
+hitbox = NodePath("FlippableComponents/HitboxComponent")
+hurtbox = NodePath("FlippableComponents/HurtboxComponenent")
 animation_player = NodePath("SpriteComponent/AnimationPlayer")
+jump_velocity = -200.0
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("3_lerqx")

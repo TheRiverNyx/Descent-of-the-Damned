@@ -57,6 +57,7 @@ metadata/path_type = "ladder"
 [node name="LadderArea" type="Area2D" parent="Navigation/Ladder" groups=["ladder_link"]]
 collision_layer = 8
 collision_mask = 6
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Navigation/Ladder/LadderArea"]
 position = Vector2(56, -48)

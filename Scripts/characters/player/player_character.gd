@@ -11,6 +11,8 @@ class_name Player extends CharacterBody2D
 var gravity:Vector2
 @export var current_state: PlayerStates = PlayerStates.IDLE
 @onready var flippable_component:FlippableComponent = $FlippableComponents
+var in_ladder_collision:bool = false
+var climb_speed:float = 200
 
 enum PlayerStates{
     WALKING,
@@ -19,19 +21,24 @@ enum PlayerStates{
     FALLING,
     IDLE,
     ATTACKING,
-    DODGING
+    DODGING,
+    CLIMBING
 }
 func _ready() -> void:
     gravity = get_gravity()
 
 func _physics_process(delta: float) -> void:
     # Add the gravity.
-    if not is_on_floor():
+    if not is_on_floor() and current_state != PlayerStates.CLIMBING:
         current_state=PlayerStates.FALLING
         velocity += get_gravity() * delta
-
+    var up_down_direction := Input.get_axis("move_down","move_up")
+    if in_ladder_collision and up_down_direction !=0 :
+        velocity.y = up_down_direction * climb_speed
+        current_state = PlayerStates.CLIMBING
+        
     # Handle jump.
-    if Input.is_action_just_pressed("jump") and is_on_floor():
+    if Input.is_action_just_pressed("jump") and is_on_floor() or in_ladder_collision:
         jump()
 
     # Get the input direction and handle the movement/deceleration.
@@ -58,3 +65,6 @@ func jump()-> void:
 func set_flip_character(value:bool)->void:
     sprite.flip_h=value
     flippable_component.flip(value)
+    
+func set_in_ladder_area(value:bool):
+    in_ladder_collision=value
