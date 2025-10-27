@@ -1,6 +1,9 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://nx7o57ppk617"]
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://nx7o57ppk617"]
 
 [ext_resource type="Texture2D" uid="uid://b1l5dl7s23nmk" path="res://Placeholders/brackeys_platformer_assets/sprites/world_tileset.png" id="1_rqoov"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_1qj31"]
+tile_data = PackedInt32Array(0, 131072, 4, 131072, 131072, 8, 196608, 131072, 8, 262144, 196608, 8, 327680, 196608, 7, 393216, 196608, 8, 458752, 131072, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sq683"]
 texture = ExtResource("1_rqoov")
@@ -77,6 +80,7 @@ texture = ExtResource("1_rqoov")
 11:2/0 = 0
 11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.875, 8, -8, 8, -3, -8, 0.375)
 0:3/0 = 0
+0:3/0/custom_data_0 = true
 1:3/0 = 0
 2:3/0 = 0
 2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -87,6 +91,7 @@ texture = ExtResource("1_rqoov")
 8:3/0 = 0
 9:3/0 = 0
 0:4/0 = 0
+0:4/0/custom_data_0 = true
 1:4/0 = 0
 5:4/0 = 0
 6:4/0 = 0
@@ -95,6 +100,7 @@ texture = ExtResource("1_rqoov")
 8:4/0 = 0
 9:4/0 = 0
 0:5/0 = 0
+0:5/0/custom_data_0 = true
 1:5/0 = 0
 5:5/0 = 0
 6:5/0 = 0
@@ -108,6 +114,7 @@ texture = ExtResource("1_rqoov")
 0:7/0 = 0
 1:7/0 = 0
 3:7/0 = 0
+3:7/0/custom_data_0 = true
 5:7/0 = 0
 6:7/0 = 0
 7:7/0 = 0
@@ -115,7 +122,9 @@ texture = ExtResource("1_rqoov")
 0:8/0 = 0
 1:8/0 = 0
 2:8/0 = 0
+2:8/0/custom_data_0 = true
 3:8/0 = 0
+3:8/0/custom_data_0 = true
 4:8/0 = 0
 5:8/0 = 0
 6:8/0 = 0
@@ -163,9 +172,12 @@ texture = ExtResource("1_rqoov")
 3:15/0 = 0
 2:4/size_in_atlas = Vector2i(3, 3)
 2:4/0 = 0
+2:4/0/custom_data_0 = true
 0:6/0 = 0
 
 [resource]
 physics_layer_0/collision_layer = 1
-navigation_layer_0/layers = 1
+custom_data_layer_0/name = "climbable"
+custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_sq683")
+pattern_0 = SubResource("TileMapPattern_1qj31")
