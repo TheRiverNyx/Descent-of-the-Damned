@@ -13,7 +13,7 @@ config_version=5
 config/name="DescentOfTheDamned"
 run/main_scene="res://Scenes/main/game.tscn"
 config/use_custom_user_dir=true
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://cw32cw3l4n8ad"
 
 [autoload]
